@@ -9,12 +9,12 @@ import java.time.LocalDateTime;
  * A visit appointment for a patient
  */
 public class Appointment {
-    Patient patient;
-    LocalDateTime dateTime;
-    Duration duration;
-    Provider provider;
-    String reasonForVisit;
-    SchedulingStatus status;
+    public Patient patient;
+    public LocalDateTime dateTime;
+    public Duration duration;
+    public Provider provider;
+    public String reasonForVisit;
+    public SchedulingStatus status;
 
     /**
      * Creates an appointment request with "Pending" status.

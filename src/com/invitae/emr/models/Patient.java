@@ -9,9 +9,9 @@ import java.time.LocalDate;
  * The patient.
  */
 public class Patient extends Person {
-    LocalDate dateOfBirth;
-    Sex sex;
-    String ssn;
+    public LocalDate dateOfBirth;
+    public Sex sex;
+    public String ssn;
 
     public Patient(String firstName, String lastName, String mrn, Address address, String phoneNumber, String email,
                    LocalDate dateOfBirth, Sex sex, String ssn) {
@@ -19,5 +19,14 @@ public class Patient extends Person {
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
         this.ssn = ssn;
+    }
+
+    public Patient(String firstName, String lastName, String mrn) {
+        super(firstName, lastName, new Identifier(mrn, IdType.MRN));
+    }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName + " (MRN " + identifier.id + ")";
     }
 }

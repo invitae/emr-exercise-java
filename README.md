@@ -1,10 +1,16 @@
 # EMR Programming Exercises
 
-## Pick an exercise from the following 
-1. Given a list of providers and appointment requests, find out ...
+## Pick an exercise from the following:
+(Actual instructions will be shown to the candidate during the interview.)
+### 1. Exercise one
+### 2. Exercise two
+### 3. Exercise three
+### 4. Exercise four
 
 ## Expectations
+
 ### We are looking for:
+
 - Production-quality code with documentation and comments.
 - Appropriate error handling.
 - Unit tests with good coverage, including edge cases.

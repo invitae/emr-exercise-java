@@ -8,4 +8,10 @@ public class Status {
         NoShow,
         Canceled
     }
+
+    public enum OrderStatus {
+        New,
+        Resulted,
+        Canceled
+    }
 }

@@ -7,9 +7,9 @@ import java.time.LocalTime;
  * The availability of a provider.
  */
 public class Availability {
-    DayOfWeek[] days;
-    LocalTime startTime;
-    LocalTime endTime;
+    public DayOfWeek[] days;
+    public LocalTime startTime;
+    public LocalTime endTime;
 
     public Availability(DayOfWeek[] days, LocalTime startTime, LocalTime endTime) {
         this.days = days;
@@ -20,7 +20,7 @@ public class Availability {
     /**
      * Creates an Availability with default values.
      *
-     * @return Availability with Monday to Friday and 8am to 6pm.
+     * @return Availability of Monday to Friday and 8am to 6pm.
      */
     public static Availability defaultAvailability() {
         var weekDays = new DayOfWeek[]{
