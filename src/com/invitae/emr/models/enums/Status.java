@@ -11,6 +11,7 @@ public class Status {
 
     public enum OrderStatus {
         New,
+        Accepted,
         Resulted,
         Canceled
     }
