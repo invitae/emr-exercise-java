@@ -15,15 +15,13 @@ public class LabOrder {
     public Patient patient;
     public Provider orderingProvider;
     public Appointment visit;
-    public Insurance insurance;
     public ClinicalCode[] diagnoses;
     public ClinicalCode[] askOnEntryQuestions;
     public OrderStatus status;
 
     public LabOrder(String orderId, LocalDateTime dateReceived, String panelCode, String practiceId,
                     Patient patient, Provider orderingProvider, Appointment visit,
-                    Insurance insurance, ClinicalCode[] diagnoses,
-                    ClinicalCode[] askOnEntryQuestions) {
+                    ClinicalCode[] diagnoses, ClinicalCode[] askOnEntryQuestions) {
         this.orderId = orderId;
         this.dateReceived = dateReceived;
         this.panelCode = panelCode;
@@ -31,7 +29,6 @@ public class LabOrder {
         this.patient = patient;
         this.orderingProvider = orderingProvider;
         this.visit = visit;
-        this.insurance = insurance;
         this.diagnoses = diagnoses;
         this.askOnEntryQuestions = askOnEntryQuestions;
         this.status = OrderStatus.New;

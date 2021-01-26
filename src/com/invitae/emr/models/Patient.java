@@ -1,6 +1,5 @@
 package com.invitae.emr.models;
 
-import com.invitae.emr.models.enums.IdType;
 import com.invitae.emr.models.enums.Sex;
 
 import java.time.LocalDate;
@@ -11,22 +10,18 @@ import java.time.LocalDate;
 public class Patient extends Person {
     public LocalDate dateOfBirth;
     public Sex sex;
-    public String ssn;
+    public String mrn;
 
-    public Patient(String firstName, String lastName, String mrn, Address address, String phoneNumber, String email,
-                   LocalDate dateOfBirth, Sex sex, String ssn) {
-        super(firstName, lastName, new Identifier(mrn, IdType.MRN), address, phoneNumber, email);
+    public Patient(String firstName, String lastName, Address address, String phoneNumber, String email,
+                   LocalDate dateOfBirth, Sex sex, String mrn) {
+        super(firstName, lastName, address, phoneNumber, email);
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
-        this.ssn = ssn;
-    }
-
-    public Patient(String firstName, String lastName, String mrn) {
-        super(firstName, lastName, new Identifier(mrn, IdType.MRN));
+        this.mrn = mrn;
     }
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " (MRN " + identifier.id + ")";
+        return firstName + " " + lastName + " (MRN " + mrn + ")";
     }
 }

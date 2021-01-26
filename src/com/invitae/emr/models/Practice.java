@@ -1,7 +1,6 @@
 package com.invitae.emr.models;
 
-import com.invitae.emr.models.enums.IdType;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,13 +8,14 @@ import java.util.List;
  */
 public class Practice {
     public String name;
-    public Identifier identifier;
+    public String id;
     public Address address;
     public List<Provider> members;
 
     public Practice(String name, Address address, String id) {
         this.name = name;
         this.address = address;
-        this.identifier = new Identifier(id, IdType.Practice);
+        this.id = id;
+        this.members = new ArrayList<>();
     }
 }
