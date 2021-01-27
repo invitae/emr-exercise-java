@@ -15,4 +15,9 @@ public class Status {
         Resulted,
         Canceled
     }
+
+    public enum ResultStatus {
+        Final,
+        Corrected
+    }
 }
