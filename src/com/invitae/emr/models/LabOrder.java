@@ -8,21 +8,21 @@ import java.time.LocalDateTime;
  * The lab order for genetic testing
  */
 public class LabOrder {
-    public String orderId;
+    public String id;
     public LocalDateTime dateReceived;
     public String panelCode;
     public String practiceId;
     public Patient patient;
     public Provider orderingProvider;
     public Appointment visit;
-    public ClinicalInfo[] diagnoses;
+    public String[] diagnoses;
     public ClinicalInfo[] askOnEntryQuestions;
     public OrderStatus status;
 
-    public LabOrder(String orderId, LocalDateTime dateReceived, String panelCode, String practiceId,
+    public LabOrder(String id, LocalDateTime dateReceived, String panelCode, String practiceId,
                     Patient patient, Provider orderingProvider, Appointment visit,
-                    ClinicalInfo[] diagnoses, ClinicalInfo[] askOnEntryQuestions) {
-        this.orderId = orderId;
+                    String[] diagnoses) {
+        this.id = id;
         this.dateReceived = dateReceived;
         this.panelCode = panelCode;
         this.practiceId = practiceId;
@@ -30,7 +30,6 @@ public class LabOrder {
         this.orderingProvider = orderingProvider;
         this.visit = visit;
         this.diagnoses = diagnoses;
-        this.askOnEntryQuestions = askOnEntryQuestions;
         this.status = OrderStatus.New;
     }
 }

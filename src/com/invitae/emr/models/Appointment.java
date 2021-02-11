@@ -9,26 +9,39 @@ import java.time.LocalDateTime;
  * A visit appointment for a patient
  */
 public class Appointment {
+    public String id;
     public Patient patient;
     public LocalDateTime dateTime;
     public Duration duration;
+    public Practice practice;
     public Provider provider;
     public String reasonForVisit;
     public SchedulingStatus status;
 
     /**
      * Creates an appointment request with "Pending" status.
-     *
-     * @param patient        The patient requesting the appointment
-     * @param dateTime       Date and time of the visit
-     * @param duration       Duration of the visit
-     * @param reasonForVisit Primary reason for the visit
      */
-    public Appointment(Patient patient, LocalDateTime dateTime, Duration duration, String reasonForVisit) {
+    public Appointment(String id, Patient patient, LocalDateTime dateTime, Duration duration, String reasonForVisit) {
+        this.id = id;
         this.patient = patient;
         this.dateTime = dateTime;
         this.duration = duration;
         this.reasonForVisit = reasonForVisit;
         this.status = SchedulingStatus.Pending;
+    }
+
+    /**
+     * Creates a completed appointment.
+     */
+    public Appointment(String id, Patient patient, LocalDateTime dateTime, Duration duration,
+                       Practice practice, Provider provider, String reasonForVisit) {
+        this.id = id;
+        this.patient = patient;
+        this.dateTime = dateTime;
+        this.duration = duration;
+        this.practice = practice;
+        this.provider = provider;
+        this.reasonForVisit = reasonForVisit;
+        this.status = SchedulingStatus.Completed;
     }
 }

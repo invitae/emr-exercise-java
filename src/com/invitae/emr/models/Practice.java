@@ -7,15 +7,15 @@ import java.util.List;
  * The medical practice facility
  */
 public class Practice {
-    public String name;
     public String id;
+    public String name;
     public Address address;
     public List<Provider> members;
 
-    public Practice(String name, Address address, String id) {
+    public Practice(String id, String name, Address address) {
+        this.id = id;
         this.name = name;
         this.address = address;
-        this.id = id;
         this.members = new ArrayList<>();
     }
 }

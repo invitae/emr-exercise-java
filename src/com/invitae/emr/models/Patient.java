@@ -8,20 +8,20 @@ import java.time.LocalDate;
  * The patient.
  */
 public class Patient extends Person {
+    public String id;
     public LocalDate dateOfBirth;
     public Sex sex;
-    public String mrn;
 
     public Patient(String firstName, String lastName, Address address, String phoneNumber, String email,
-                   LocalDate dateOfBirth, Sex sex, String mrn) {
+                   LocalDate dateOfBirth, Sex sex, String id) {
         super(firstName, lastName, address, phoneNumber, email);
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
-        this.mrn = mrn;
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " (MRN " + mrn + ")";
+        return firstName + " " + lastName + " (ID: " + id + ")";
     }
 }

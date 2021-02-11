@@ -18,9 +18,4 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 }

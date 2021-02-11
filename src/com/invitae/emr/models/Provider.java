@@ -9,29 +9,21 @@ import java.util.List;
  * The health care provider
  */
 public class Provider extends Person {
-    public String npi;
+    public String id;
     public Language[] languages;
     public Availability availability;
     public List<Appointment> appointments;
 
-    public Provider(String firstName, String lastName, String npi, Address address, String phoneNumber, String email,
-                    Language[] languages, Availability availability) {
+    public Provider(String firstName, String lastName, String id, Address address, String phoneNumber, String email,
+                    Availability availability) {
         super(firstName, lastName, address, phoneNumber, email);
-        this.npi = npi;
-        this.languages = languages;
+        this.id = id;
         this.availability = availability;
         this.appointments = new ArrayList<>();
     }
 
-    public Provider(String firstName, String lastName, String npi) {
-        super(firstName, lastName);
-        this.npi = npi;
-        this.appointments = new ArrayList<>();
-        this.availability = Availability.defaultAvailability();
-    }
-
     @Override
     public String toString() {
-        return "Dr. " + lastName + " (NPI " + npi + ")";
+        return "Dr. " + lastName + " (ID: " + id + ")";
     }
 }
