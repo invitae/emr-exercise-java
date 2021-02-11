@@ -3,6 +3,9 @@ package com.invitae.emr.services;
 import com.invitae.emr.models.LabOrder;
 import com.invitae.emr.models.Practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Provides services for processing lab orders.
  */
@@ -23,7 +26,11 @@ public class OrderProcessing {
     /**
      * Practices we accept orders from
      */
-    private static final Practice[] practices = new Practice[]{};
+    private static final List<Practice> practices = new ArrayList<>();
+
+    public static void addPractices(List<Practice> newPractices) {
+        practices.addAll(newPractices);
+    }
 
     /**
      * Process and validate the given list of orders

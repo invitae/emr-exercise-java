@@ -22,6 +22,7 @@ public class DataLoader {
 
         var organizationCsvFile = "./data/csv/organizations.csv";
         var practices = loadFromCsv(organizationCsvFile, Organization.class, Organization::toPractice);
+        OrderProcessing.addPractices(practices);
 
         var encountersCsvFile = "./data/csv/encounters.csv";
         var appointments = loadFromCsv(encountersCsvFile, Encounter.class,
@@ -37,7 +38,7 @@ public class DataLoader {
     }
 
     private static <T, R> List<R> loadFromCsv(String filename, Class<T> type,
-                                             Function<T, R> mapper) throws IOException {
+                                              Function<T, R> mapper) throws IOException {
         var fileReader = new FileReader(filename);
         var csvBuilder = new CsvToBeanBuilder<T>(fileReader);
 
