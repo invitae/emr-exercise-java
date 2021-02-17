@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.invitae'
+version '1.0.0'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'junit:junit:4.12'
+    compile 'com.opencsv:opencsv:5.3'
+}
+
+application {
+    mainClassName = 'com.invitae.emr.Main'
+}
+
+test {
+    useJUnitPlatform()
+}
