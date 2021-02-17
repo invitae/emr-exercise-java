@@ -18,12 +18,13 @@ repositories {
 }
 
 dependencies {
-    compile 'junit:junit:4.12'
-    compile 'com.opencsv:opencsv:5.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+    implementation 'com.opencsv:opencsv:5.3'
 }
 
 application {
-    mainClassName = 'com.invitae.emr.Main'
+    mainClass.set('com.invitae.emr.Main')
 }
 
 test {
