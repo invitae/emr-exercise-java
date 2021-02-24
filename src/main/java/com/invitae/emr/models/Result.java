@@ -1,9 +1,8 @@
 package com.invitae.emr.models;
 
-import com.invitae.emr.models.enums.Status;
+import com.invitae.emr.models.enums.Status.ResultStatus;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,14 +11,14 @@ import java.util.List;
 public class Result {
     public String orderId;
     public OffsetDateTime completionDateTime;
-    public Status.ResultStatus status;
+    public ResultStatus status;
     public List<ClinicalInfo> observations;
 
-    public Result(String orderId, OffsetDateTime completionDateTime,
-                  Status.ResultStatus status) {
+    public Result(String orderId, OffsetDateTime completionDateTime, ResultStatus status,
+                  List<ClinicalInfo> observations) {
         this.orderId = orderId;
         this.completionDateTime = completionDateTime;
         this.status = status;
-        this.observations = new ArrayList<>();
+        this.observations = observations;
     }
 }

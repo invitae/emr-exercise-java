@@ -31,33 +31,3 @@ public class LabReport {
     }
 }
 
-/**
- * The name and transcript of the analyzed gene
- */
-class GeneAnalyzed {
-    public String gene;
-    public String transcript;
-
-    public GeneAnalyzed(String gene, String transcript) {
-        this.gene = gene;
-        this.transcript = transcript;
-    }
-}
-
-/**
- * Reported findings of the variant
- */
-class Variant {
-    public String name;
-    public VariantClassification variantClassification;
-    public String gene;
-    public Zygosity zygosity;
-
-    public Variant(String name, VariantClassification variantClassification, String gene,
-                   Zygosity zygosity) {
-        this.name = name;
-        this.variantClassification = variantClassification;
-        this.gene = gene;
-        this.zygosity = zygosity;
-    }
-}
