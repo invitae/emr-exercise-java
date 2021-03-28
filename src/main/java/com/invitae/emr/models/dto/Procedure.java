@@ -47,7 +47,6 @@ public class Procedure {
                     visit.get().practice.id,
                     patient.get(),
                     visit.get().provider,
-                    visit.get(),
                     reasonDescription.isEmpty() ? null : new String[]{reasonDescription});
         } else {
             throw new RuntimeException("Can't find the patient or visit.");
