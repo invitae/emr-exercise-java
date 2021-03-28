@@ -7,22 +7,22 @@ import com.opencsv.bean.CsvBindByName;
 
 public class ProviderCsv {
     @CsvBindByName(column = "Id")
-    String id;
+    private String id;
 
     @CsvBindByName(column = "NAME")
-    String name;
+    private String name;
 
     @CsvBindByName(column = "ADDRESS")
-    String streetAddress;
+    private String streetAddress;
 
     @CsvBindByName(column = "CITY")
-    String city;
+    private String city;
 
     @CsvBindByName(column = "STATE")
-    String state;
+    private String state;
 
     @CsvBindByName(column = "ZIP")
-    String postalCode;
+    private String postalCode;
 
     public Provider toProvider() {
         var names = name.split(" ");

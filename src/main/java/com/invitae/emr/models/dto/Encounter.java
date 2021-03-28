@@ -13,27 +13,27 @@ import java.util.List;
 
 public class Encounter {
     @CsvBindByName(column = "Id")
-    String id;
+    private String id;
 
     @CsvBindByName(column = "START")
     @CsvDate(value = "yyyy-MM-dd'T'HH:mm:ssX")
-    OffsetDateTime start;
+    private OffsetDateTime start;
 
     @CsvBindByName(column = "STOP")
     @CsvDate(value = "yyyy-MM-dd'T'HH:mm:ssX")
-    OffsetDateTime end;
+    private OffsetDateTime end;
 
     @CsvBindByName(column = "PATIENT")
-    String patientId;
+    private String patientId;
 
     @CsvBindByName(column = "ORGANIZATION")
-    String practiceId;
+    private String practiceId;
 
     @CsvBindByName(column = "PROVIDER")
-    String providerId;
+    private String providerId;
 
     @CsvBindByName(column = "DESCRIPTION")
-    String reasonForVisit;
+    private String reasonForVisit;
 
     public Visit toVisit(List<Patient> patients, List<Practice> practices, List<Provider> providers) {
         var patient = patients.stream().filter(p -> p.id.equals(patientId)).findFirst();

@@ -14,25 +14,25 @@ import java.util.UUID;
 public class Procedure {
     @CsvBindByName(column = "DATE")
     @CsvDate(value = "yyyy-MM-dd'T'HH:mm:ssX")
-    OffsetDateTime dateTimeReceived;
+    private OffsetDateTime dateTimeReceived;
 
     @CsvBindByName(column = "PATIENT")
-    String patientId;
+    private String patientId;
 
     @CsvBindByName(column = "ENCOUNTER")
-    String encounterId;
+    private String encounterId;
 
     @CsvBindByName(column = "CODE")
-    String code;
+    private String code;
 
     @CsvBindByName(column = "DESCRIPTION")
-    String description;
+    private String description;
 
     @CsvBindByName(column = "REASONCODE")
-    String reasonCode;
+    private String reasonCode;
 
     @CsvBindByName(column = "REASONDESCRIPTION")
-    String reasonDescription;
+    private String reasonDescription;
 
     public LabOrder toLabOrder(List<Patient> patients, List<Visit> visits) {
         var patient = patients.stream().filter(p -> p.id.equals(patientId)).findFirst();
