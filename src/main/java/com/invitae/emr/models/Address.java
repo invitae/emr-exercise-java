@@ -1,14 +1,14 @@
 package com.invitae.emr.models;
 
 /**
- * The address of a person.
+ * The address of a person or an organization
  */
 public class Address {
-    public String streetAddress;
-    public String city;
-    public String state;
-    public String postalCode;
-    public String country;
+    public final String streetAddress;
+    public final String city;
+    public final String state;
+    public final String postalCode;
+    public final String country;
 
     public Address(String streetAddress, String city, String state, String postalCode, String country) {
         this.streetAddress = streetAddress;

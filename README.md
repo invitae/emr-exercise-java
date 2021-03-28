@@ -26,3 +26,5 @@
 - Unit tests with good coverage, including edge cases.
 - Time and space analysis of your algorithms.
 - If you use any design patterns, explain why you choose them, and how they help with your implementation.
+
+### You should not modify the model classes.

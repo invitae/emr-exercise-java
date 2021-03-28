@@ -1,8 +1,8 @@
 package com.invitae.emr.models.dto;
 
-import com.invitae.emr.models.Appointment;
 import com.invitae.emr.models.LabOrder;
 import com.invitae.emr.models.Patient;
+import com.invitae.emr.models.Visit;
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;
 
@@ -34,7 +34,7 @@ public class Procedure {
     @CsvBindByName(column = "REASONDESCRIPTION")
     String reasonDescription;
 
-    public LabOrder toLabOrder(List<Patient> patients, List<Appointment> visits) {
+    public LabOrder toLabOrder(List<Patient> patients, List<Visit> visits) {
         var patient = patients.stream().filter(p -> p.id.equals(patientId)).findFirst();
         var visit = visits.stream().filter(v -> v.id.equals(encounterId)).findFirst();
         var id = UUID.randomUUID();

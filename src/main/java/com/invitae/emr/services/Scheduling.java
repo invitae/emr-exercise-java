@@ -1,18 +1,22 @@
 package com.invitae.emr.services;
 
 import com.invitae.emr.models.Appointment;
-import com.invitae.emr.models.Provider;
+import com.invitae.emr.models.Visit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Provides services for scheduling appointments for patients.
  */
 public class Scheduling {
     /**
-     * Schedule appointments.
+     * Schedule appointments
      *
-     * @param appointments List of pending appointments
-     * @param providers    List of providers
+     * @param appointments List of appointment requests
+     * @return List of visits
      */
-    public static void schedule(Appointment[] appointments, Provider[] providers) {
+    public static List<Visit> schedule(Appointment[] appointments) {
+        return new ArrayList<>();
     }
 }

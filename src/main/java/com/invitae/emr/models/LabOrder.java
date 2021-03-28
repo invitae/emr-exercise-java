@@ -8,19 +8,18 @@ import java.time.LocalDateTime;
  * The lab order for genetic testing
  */
 public class LabOrder {
-    public String id;
-    public LocalDateTime dateReceived;
-    public String panelCode;
-    public String practiceId;
-    public Patient patient;
-    public Provider orderingProvider;
-    public Appointment visit;
-    public String[] diagnoses;
-    public ClinicalInfo[] askOnEntryQuestions;
-    public OrderStatus status;
+    public final String id;
+    public final LocalDateTime dateReceived;
+    public final String panelCode;
+    public final String practiceId;
+    public final Patient patient;
+    public final Provider orderingProvider;
+    public final Visit visit;
+    public final String[] diagnoses;
+    public final OrderStatus status;
 
     public LabOrder(String id, LocalDateTime dateReceived, String panelCode, String practiceId,
-                    Patient patient, Provider orderingProvider, Appointment visit,
+                    Patient patient, Provider orderingProvider, Visit visit,
                     String[] diagnoses) {
         this.id = id;
         this.dateReceived = dateReceived;

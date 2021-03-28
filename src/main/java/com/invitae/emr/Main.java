@@ -8,7 +8,7 @@ public class Main {
         System.out.println("This is the start of your EMR programming exercise.");
 
         try {
-            DataLoader.loadSampleData();
+            final var sampleData = DataLoader.loadSampleData();
         } catch (Exception exception) {
             System.out.println("ERROR: failed to read from sample data files.");
             exception.printStackTrace();

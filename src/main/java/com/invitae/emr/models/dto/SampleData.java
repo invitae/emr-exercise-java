@@ -8,14 +8,14 @@ import java.util.List;
  * A container for sample data.
  */
 public class SampleData {
-    public List<Patient> patients;
-    public List<Provider> providers;
-    public List<Practice> practices;
-    public List<Appointment> visits;
-    public List<LabOrder> labOrders;
+    public final List<Patient> patients;
+    public final List<Provider> providers;
+    public final List<Practice> practices;
+    public final List<Visit> visits;
+    public final List<LabOrder> labOrders;
 
     public SampleData(List<Patient> patients, List<Provider> providers,
-                      List<Practice> practices, List<Appointment> visits,
+                      List<Practice> practices, List<Visit> visits,
                       List<LabOrder> labOrders) {
         this.patients = patients;
         this.providers = providers;

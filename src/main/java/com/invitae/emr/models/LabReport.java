@@ -1,22 +1,19 @@
 package com.invitae.emr.models;
 
-import com.invitae.emr.models.enums.VariantFinding.VariantClassification;
-import com.invitae.emr.models.enums.VariantFinding.Zygosity;
-
 import java.time.LocalDateTime;
 
 /**
  * The report produced by our lab, for a LabOrder.
  */
 public class LabReport {
-    public String id;
-    public String orderId;
-    public LocalDateTime createdOn;
-    public String type;
-    public String subType;
-    public GeneAnalyzed[] genesAnalyzed;
-    public Variant[] variants;
-    public String[] clinicalSummaries;
+    public final String id;
+    public final String orderId;
+    public final LocalDateTime createdOn;
+    public final String type;
+    public final String subType;
+    public final GeneAnalyzed[] genesAnalyzed;
+    public final Variant[] variants;
+    public final String[] clinicalSummaries;
 
     public LabReport(String id, String orderId, LocalDateTime createdOn, String type, String subType,
                      GeneAnalyzed[] genesAnalyzed, Variant[] variants, String[] clinicalSummaries) {
@@ -30,4 +27,3 @@ public class LabReport {
         this.clinicalSummaries = clinicalSummaries;
     }
 }
-

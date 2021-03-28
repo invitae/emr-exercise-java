@@ -9,35 +9,34 @@ import java.time.LocalDate;
 
 public class PatientCsv {
     @CsvBindByName(column = "Id")
-    public String id;
+    String id;
 
     @CsvBindByName(column = "LAST")
-    public String lastName;
+    String lastName;
 
     @CsvBindByName(column = "FIRST")
-    public String firstName;
+    String firstName;
 
     @CsvBindByName(column = "BIRTHDATE")
-    public String dateOfBirth;
+    String dateOfBirth;
 
     @CsvBindByName(column = "GENDER")
-    public String sex;
+    String sex;
 
     @CsvBindByName(column = "ADDRESS")
-    public String streetAddress;
+    String streetAddress;
 
     @CsvBindByName(column = "CITY")
-    public String city;
+    String city;
 
     @CsvBindByName(column = "STATE")
-    public String state;
+    String state;
 
     @CsvBindByName(column = "ZIP")
-    public String postalCode;
+    String postalCode;
 
     public Patient toPatient() {
         var address = new Address(streetAddress, city, state, postalCode, "US");
-        return new Patient(firstName, lastName, address, null, null, LocalDate.parse(dateOfBirth),
-                Sex.fromSingleLetter(sex), id);
+        return new Patient(firstName, lastName, address, LocalDate.parse(dateOfBirth), Sex.fromSingleLetter(sex), id);
     }
 }

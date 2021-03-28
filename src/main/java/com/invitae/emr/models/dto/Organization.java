@@ -28,6 +28,6 @@ public class Organization {
 
     public Practice toPractice() {
         var address = new Address(streetAddress, city, state, postalCode, "US");
-        return new Practice(id, name, address);
+        return new Practice(id, name, address, phoneNumber);
     }
 }

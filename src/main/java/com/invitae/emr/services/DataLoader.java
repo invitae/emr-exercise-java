@@ -13,36 +13,41 @@ import java.util.stream.Collectors;
  * Contains methods for loading sample data from files.
  */
 public class DataLoader {
+    /**
+     * Loads various sample data from CSV files
+     *
+     * @return A SampleData object
+     */
     public static SampleData loadSampleData() throws IOException {
-        var patientCsvFile = "./data/csv/patients.csv";
-        var patients = loadFromCsv(patientCsvFile, PatientCsv.class, PatientCsv::toPatient);
+        final var patientCsvFile = "./data/csv/patients.csv";
+        final var patients = loadFromCsv(patientCsvFile, PatientCsv.class, PatientCsv::toPatient);
 
-        var providerCsvFile = "./data/csv/providers.csv";
-        var providers = loadFromCsv(providerCsvFile, ProviderCsv.class, ProviderCsv::toProvider);
+        final var providerCsvFile = "./data/csv/providers.csv";
+        final var providers = loadFromCsv(providerCsvFile, ProviderCsv.class, ProviderCsv::toProvider);
 
-        var organizationCsvFile = "./data/csv/organizations.csv";
-        var practices = loadFromCsv(organizationCsvFile, Organization.class, Organization::toPractice);
+        final var organizationCsvFile = "./data/csv/organizations.csv";
+        final var practices = loadFromCsv(organizationCsvFile, Organization.class, Organization::toPractice);
         OrderProcessing.addPractices(practices);
 
-        var encountersCsvFile = "./data/csv/encounters.csv";
-        var appointments = loadFromCsv(encountersCsvFile, Encounter.class,
-                encounter -> encounter.toAppointment(patients, practices, providers));
+        final var encountersCsvFile = "./data/csv/encounters.csv";
+        final var visits = loadFromCsv(encountersCsvFile, Encounter.class,
+                encounter -> encounter.toVisit(patients, practices, providers));
 
-        var proceduresCsvFile = "./data/csv/procedures.csv";
-        var labOrders = loadFromCsv(proceduresCsvFile, Procedure.class,
-                procedure -> procedure.toLabOrder(patients, appointments));
+        final var proceduresCsvFile = "./data/csv/procedures.csv";
+        final var labOrders = loadFromCsv(proceduresCsvFile, Procedure.class,
+                procedure -> procedure.toLabOrder(patients, visits));
 
         System.out.println("Sample data have been loaded.");
 
-        return new SampleData(patients, providers, practices, appointments, labOrders);
+        return new SampleData(patients, providers, practices, visits, labOrders);
     }
 
     private static <T, R> List<R> loadFromCsv(String filename, Class<T> type,
                                               Function<T, R> mapper) throws IOException {
-        var fileReader = new FileReader(filename);
-        var csvBuilder = new CsvToBeanBuilder<T>(fileReader);
+        final var fileReader = new FileReader(filename);
+        final var csvBuilder = new CsvToBeanBuilder<T>(fileReader);
 
-        var records = csvBuilder
+        final var records = csvBuilder
                 .withType(type)
                 .build()
                 .parse()

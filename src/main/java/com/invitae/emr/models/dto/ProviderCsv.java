@@ -29,6 +29,6 @@ public class ProviderCsv {
         var firstName = names[0];
         var lastName = names[1];
         var address = new Address(streetAddress, city, state, postalCode, "US");
-        return new Provider(firstName, lastName, id, address, null, null, Availability.defaultAvailability());
+        return new Provider(firstName, lastName, id, address, Availability.defaultAvailability);
     }
 }

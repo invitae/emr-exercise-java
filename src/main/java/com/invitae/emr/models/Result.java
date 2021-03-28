@@ -9,10 +9,10 @@ import java.util.List;
  * The test result we send to the ordering facility
  */
 public class Result {
-    public String orderId;
-    public OffsetDateTime completionDateTime;
-    public ResultStatus status;
-    public List<ClinicalInfo> observations;
+    public final String orderId;
+    public final OffsetDateTime completionDateTime;
+    public final ResultStatus status;
+    public final List<ClinicalInfo> observations;
 
     public Result(String orderId, OffsetDateTime completionDateTime, ResultStatus status,
                   List<ClinicalInfo> observations) {

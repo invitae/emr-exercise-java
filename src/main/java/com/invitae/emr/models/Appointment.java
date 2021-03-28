@@ -1,47 +1,47 @@
 package com.invitae.emr.models;
 
-import com.invitae.emr.models.enums.Status.SchedulingStatus;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 /**
- * A visit appointment for a patient
+ * An appointment request for an office visit
  */
 public class Appointment {
-    public String id;
-    public Patient patient;
-    public LocalDateTime dateTime;
-    public Duration duration;
-    public Practice practice;
-    public Provider provider;
-    public String reasonForVisit;
-    public SchedulingStatus status;
+    public final String id;
 
     /**
-     * Creates an appointment request with "Pending" status.
+     * The patient requesting the visit
      */
-    public Appointment(String id, Patient patient, LocalDateTime dateTime, Duration duration, String reasonForVisit) {
-        this.id = id;
-        this.patient = patient;
-        this.dateTime = dateTime;
-        this.duration = duration;
-        this.reasonForVisit = reasonForVisit;
-        this.status = SchedulingStatus.Pending;
-    }
+    public final Patient patient;
 
     /**
-     * Creates a completed appointment.
+     * The start time of the visit
      */
-    public Appointment(String id, Patient patient, LocalDateTime dateTime, Duration duration,
-                       Practice practice, Provider provider, String reasonForVisit) {
-        this.id = id;
+    public final LocalDateTime dateTime;
+
+    /**
+     * The length of the visit
+     */
+    public final Duration duration;
+
+    /**
+     * The practice where the visit will be scheduled
+     */
+    public final Practice practice;
+
+    /**
+     * The primary reason for the visit
+     */
+    public final String reasonForVisit;
+
+    public Appointment(Patient patient, LocalDateTime dateTime, Duration duration, Practice practice,
+                       String reasonForVisit) {
+        this.id = UUID.randomUUID().toString();
         this.patient = patient;
         this.dateTime = dateTime;
         this.duration = duration;
         this.practice = practice;
-        this.provider = provider;
         this.reasonForVisit = reasonForVisit;
-        this.status = SchedulingStatus.Completed;
     }
 }
