@@ -28,4 +28,4 @@ You can view the test report at ./build/reports/tests/test/index.html
 - Time and space analysis of your algorithms.
 - If you use any design patterns, explain why you choose them, and how they help with your implementation.
 
-### You should not modify the model classes.
+### You should not modify the model classes. Adding helper methods are OK.
