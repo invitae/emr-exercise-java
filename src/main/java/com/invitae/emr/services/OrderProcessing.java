@@ -45,7 +45,7 @@ public class OrderProcessing {
      * @param orders The orders to process
      * @return List of requisitions
      */
-    public static List<Requisition> processOrders(LabOrder[] orders) {
+    public static List<Requisition> processOrders(List<LabOrder> orders) {
         return new ArrayList<>();
     }
 }

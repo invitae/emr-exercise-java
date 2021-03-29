@@ -16,7 +16,7 @@ public class Scheduling {
      * @param appointments List of appointment requests
      * @return List of visits
      */
-    public static List<Visit> schedule(Appointment[] appointments) {
+    public static List<Visit> schedule(List<Appointment> appointments) {
         return new ArrayList<>();
     }
 }

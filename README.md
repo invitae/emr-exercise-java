@@ -6,6 +6,7 @@
 
 ### Run the tests
 `./gradlew test`
+You can view the test report at ./build/reports/tests/test/index.html
 
 ### Run the application
 `./gradlew run`
